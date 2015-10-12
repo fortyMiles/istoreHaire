@@ -1,0 +1,206 @@
+<!---->
+<!-- ��ѯ�û�start -->
+<div id="Vuser-detail"  class="clearfix">
+	<table width="476" border="0" cellspacing="0" cellpadding="0">
+	
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">客户名称：</span></td>
+	    <td width="293">
+	    <#if user.customer_name??>
+	    ${user.customer_name}
+	    <#else>
+	    
+	    </#if>
+	    </td>
+	  </tr>
+	  <input type="hidden" id="userIds" value="${user.usersId}"/>
+	  <tr>
+	    <td height="30" align="center"><span class="column">邮箱：</span></td>
+	    <td>
+	    <#if user.email??>
+	    ${user.email}
+	    <#else>
+	    
+	    </#if>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td height="30" align="center"><span class="column">手机号码：</span></td>
+	    <td>
+	    <#if user.phone??>
+	    ${user.phone}
+	    <#else>
+	   
+	    </#if>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td height="30" align="center"><span class="column">类型：</span></td>
+	    <td>
+	    <#if user.type??>
+	    ${user.type}
+	    <#else>
+	   
+	    </#if>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td height="30" align="center"><span class="column">邮编：</span></td>
+	    <td>
+	    <#if user.zipcode??>
+	    ${user.zipcode}
+	    <#else>
+	    </#if>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td height="30" align="center"><span class="column">地址</span></td>
+	    <td>
+	    <#if user.country ??>
+	    ${user.country}
+	    <#else>
+	    
+	    </#if>
+	    <#if user.city??>
+	    ${user.city}
+	    <#else>
+	   
+	    </#if>
+	    
+	    </td>
+	  </tr>
+	  <tr>
+	    <td height="30" align="center"><span class="column">创建日期：</span></td>
+	    <td>
+	    
+	    <#if user.createtime??>
+	    	${user.createtime}
+	    <#else>
+	    
+	    </#if>
+        </td>
+	  </tr>
+	    <tr>
+	    <td height="30" align="center"><span class="column">客户编号</span></td>
+	    <td>
+	    <#if user.customerNumber??>
+	    	${user.customerNumber}
+	    <#else>
+	    
+	    </#if>
+        </td>
+	  </tr>
+	  <tr>
+	    <td height="30" align="center"><span class="column">银行名称</span></td>
+	    <td>
+	    <#if user.bankName ??>
+	    	${user.bankName}
+	    <#else>
+	    </#if>
+        </td>
+	  </tr>
+	  
+	   <tr>
+	    <td height="30" align="center"><span class="column">开户地址</span></td>
+	    <td>
+	    <#if user.bankRegion??>
+	    	${user.bankRegion}
+	    <#else>
+	   
+	    </#if>
+        </td>
+	  </tr>
+	  <tr>
+	    <td height="30" align="center"><span class="column">街道地址</span></td>
+	    <td>
+	    <#if user.streetRoom??>
+	    	${user.streetRoom}
+	    <#else>
+	    
+	    </#if>
+        </td>
+	  </tr>
+	  
+	   <tr>
+	    <td height="30" align="center"><span class="column">城市:</span></td>
+	    <td>
+	    <#if user.cityStreetRoom??>
+	    	${user.cityStreetRoom}
+	    <#else>
+	    
+	    </#if>
+        </td>
+	  </tr>
+	  
+	   <tr>
+	    <td height="30" align="center"><span class="column">backGategory:</span></td>
+	    <td>
+	    <#if user.backGategory??>
+	    	${user.backGategory}
+	    <#else>
+	   
+	    </#if>
+        </td>
+	  </tr>
+	  
+	    <tr>
+	    <td height="30" align="center"><span class="column">swift:</span></td>
+	    <td>
+	    <#if user.swift??>
+	    	${user.swift}
+	    <#else>
+	    
+	    </#if>
+        </td>
+	  </tr>
+	  
+	   <tr>
+	    <td height="30" align="center"><span class="column">backgroup:</span></td>
+	    <td>
+	    <#if user.backgroup??>
+	    	${user.backgroup}
+	    <#else>
+	   
+	    </#if>
+        </td>
+	  </tr>
+	  <input type="hidden" id="userStatus" value="${user.status}"/>
+	  <#if user.status='P'>
+	  <tr>
+	    <td height="30" align="center"><span class="column">审核内容</span></td>
+	    <td>
+	    <textarea rows="5" cols="15" id="verifyContent" name="verifyContent"></textarea>
+        </td>
+	  </tr>
+	</#if>
+	  
+	</table>
+</div>
+<!-- ��ѯ�û� end -->
+
+
+
+
+<!-- ������ʾ��start -->
+<div id="block-alert-dialog" style="display: none">
+	<p>
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span>
+		<strong>����:</strong> ��ȷ��Ҫ����/���� ��Щ�û�
+	</p>
+</div>
+<!-- ������ʾ��alert end -->
+
+<!-- ��ѯ�û�start -->
+<div id="search-member-dialog" style="display: none" class="clearfix">
+	<table width="380" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td height="30" width="77" align="center"><span class="column">�������ڣ�</span></td>
+	    <td>
+	    	<input type="text" id="back_member_startDate" class="text input-date-width"  />
+	     	 -
+            <input type="text" id="back_member_endDate" class="text input-date-width"  />
+        </td>
+	  </tr>
+	</table>
+</div>
+<!-- ��ѯ�û� end -->

@@ -1,0 +1,74 @@
+<!-- 频道操作对话框   -->
+
+<!-- 频道编辑start -->
+<#list xReferencesList as xReferences>
+	<table width="800" border="1" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">序列表：</span></td>
+	    <td class="w650">${xReferences.serialnumber}</td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">国家：</span></td>
+	    <td class="w650">${xReferences.country}</td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">工程名称或所在地：</span></td>
+	    <td class="w650">${xReferences.projectplace}</td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">描述：</span></td>
+	    <td class="w650">${xReferences.description}</td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">类型：</span></td>
+	    <td class="w650">${xReferences.type}</td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">安装时间：</span></td>
+	    <td class="w650">${xReferences.installtime}</td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">产品系列：</span></td>
+	    <td class="w650">${xReferences.installseries}</td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">详细信息：</span></td>
+	    <td class="w650">${xReferences.installdetails}</td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">装机容量：</span></td>
+	    <td class="w650">${xReferences.totalcapacity}</td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">核心竞争指标：</span></td>
+	    <td class="w650">${xReferences.keycapacity}</td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">优先级：</span></td>
+	    <td width="717">${xReferences.seq}</td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">群组：</span></td>
+	    <td width="293">
+	    	<#assign xgroup="${xReferences.xgroup_id}">
+	    	<#assign xarraygroup=xgroup?split(",")>   	
+	    
+	    	<#assign xarraygroups = ["1", "普通", "2", "会员", "3", "不限"]>     	
+	    	<#list xarraygroups as xgroups_id>
+	    		<#if xgroups_id_index%2 == 0>
+	    			<#if xarraygroup?seq_contains(xgroups_id)>
+	    				${xarraygroups[xgroups_id_index+1]}&nbsp;&nbsp;
+	    			</#if>
+	    		</#if>
+	    	</#list>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">样板工程图片：</span></td>
+	    <td width="717">
+	    	${xReferences.pictures}
+	    </td>
+	  </tr>
+	</table>
+</#list>
+<!-- 频道编辑 end -->

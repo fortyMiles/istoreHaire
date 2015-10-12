@@ -1,0 +1,13 @@
+<!-- KindEditor 图片返回窗   -->
+<#if error == 1>
+{
+	"error": ${error},
+	"message": "${message}"
+}
+<#else>
+{
+	"error": ${error},
+	"url": "${'http://10.176.0.40' + url}"
+}
+</#if>
+<!-- KindEditor 图片返回窗 -->

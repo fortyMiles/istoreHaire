@@ -1,0 +1,58 @@
+<#if Session["role"]?exists>
+	<#assign role = Session["role"]>
+<#else>
+	<#assign role = "">
+</#if>
+{
+	"total":${total},
+	"page":${page},
+    "records":${records},
+    "rows":[
+    	<#list xReferencesList as xReferences>
+		    	<#if !xReferences_has_next>
+		    	{
+		    		"id":"${xReferences_index + 1}",
+		    		"cell":[
+						"${xReferences.xreferences_id}",
+						"${xReferences.serialnumber}",
+						"${xReferences.createtime}",
+						"${xReferences.author}",
+						"${xReferences.xchannel_name}",
+						"${xReferences.seq}",
+						"${xReferences.xgroup_name}",
+						"${xReferences.status_id}",
+						"${xReferences.status_name}",
+						"<button onclick='javascript:viewReferences(${xReferences.xreferences_id});'>查看</button>"
+						<#if role=="">
+						,
+						"<button onclick='javascript:approveReferences(${xReferences.xreferences_id}, \"${xReferences.status_id}\");'>通过</button>",
+						"<button onclick='javascript:rejectReferences(${xReferences.xreferences_id}, \"${xReferences.status_id}\");'>拒绝</button>"
+						</#if>
+		    		]
+				}
+			    <#else>
+			    {
+		    		"id":"${xReferences_index + 1}",
+		    		"cell":[
+						"${xReferences.xreferences_id}",
+						"${xReferences.serialnumber}",
+						"${xReferences.createtime}",
+						"${xReferences.author}",
+						"${xReferences.xchannel_name}",
+						"${xReferences.seq}",
+						"${xReferences.xgroup_name}",
+						"${xReferences.status_id}",
+						"${xReferences.status_name}",
+						"<button onclick='javascript:viewReferences(${xReferences.xreferences_id});'>查看</button>"
+						<#if role=="">
+						,
+						"<button onclick='javascript:approveReferences(${xReferences.xreferences_id}, \"${xReferences.status_id}\");'>通过</button>",
+						"<button onclick='javascript:rejectReferences(${xReferences.xreferences_id}, \"${xReferences.status_id}\");'>拒绝</button>"
+						</#if>
+		    		]
+				},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }

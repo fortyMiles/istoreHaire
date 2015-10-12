@@ -1,0 +1,35 @@
+
+{
+	"total":${total},
+	"page":${page},
+    "records":${records},
+    "rows":[
+    	<#list AttrList as attr>
+		    	<#if !attr_has_next>
+		    	{
+		    		"id":"${attr.attrId}",
+		    		"cell":[
+						"${attr.attrId}",
+						"${attr.name}",
+						"<#if (attr.description)??>${attr.description}<#else>暂无</#if>",
+						
+						"<button onclick='getSubjectOfATTR(\"${attr.attrId}\".toString());'>查看属性</button>"
+		    		]
+				}
+			    <#else>
+			    {
+		    		"id":"${attr.attrId}",
+		    		"cell":[
+						"${attr.attrId}",
+						"${attr.name}",
+						"<#if (attr.description)??>${attr.description}<#else>暂无</#if>",
+						"<button onclick='javascript:getSubjectOfATTR(\"${attr.attrId}\".toString());'>查看属性</button>"
+		    		]
+				},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }
+
+ 

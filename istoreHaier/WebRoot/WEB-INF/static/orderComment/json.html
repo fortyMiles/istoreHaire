@@ -1,0 +1,41 @@
+{
+	"total":${total},
+	"page":${page},
+    "records":${records},
+    "rows":[
+    	<#list orderCommentList as orderComment>
+		    	<#if !orderComment_has_next>
+		    	{
+		    		"id":"${orderComment_index + 1}",
+		    		"cell":[
+						"${orderComment.comment_id}",
+						"${orderComment.orders_id}",
+						"${orderComment.user_name}",
+						"${orderComment.lastupdate}",
+						<#if orderComment.isReplied=="Y">
+							"<button onclick='javascript:replyComment(${orderComment.comment_id},\"${orderComment.isReplied}\");'>查看</button>"
+						<#else>
+							"<button onclick='javascript:replyComment(${orderComment.comment_id},\"${orderComment.isReplied}\");'>回复</button>"
+						</#if>
+		    		]
+				}
+			    <#else>
+			    {
+		    		"id":"${orderComment_index + 1}",
+		    		"cell":[
+						"${orderComment.comment_id}",
+						"${orderComment.orders_id}",
+						"${orderComment.user_name}",
+						"${orderComment.lastupdate}",
+						<#if orderComment.isReplied=="Y">
+							"<button onclick='javascript:replyComment(${orderComment.comment_id},\"${orderComment.isReplied}\");'>查看</button>"
+						<#else>
+							"<button onclick='javascript:replyComment(${orderComment.comment_id},\"${orderComment.isReplied}\");'>回复</button>"
+						</#if>
+		    		]
+				},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }

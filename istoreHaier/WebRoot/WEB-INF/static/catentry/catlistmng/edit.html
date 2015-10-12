@@ -1,0 +1,16 @@
+<!-- 属性操作对话框   -->
+
+<!-- 属性编辑start -->
+<#list CatList as List>
+	<table width="376" border="0" cellspacing="0" cellpadding="0" style="margin-top: 10px;">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">属性值：</span></td>
+	    <td width="293"><input type="text" id="editcat_name" name="edit_name" class="text input-text-width" value="${List.name}" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="60" align="center"><span class="column">属性顺序：</span></td>
+	    <td width="293"><input type="text" id="editcat_seq" name="edit_seq" class="text input-text-width" value="${List.shortdescription}" /></td>
+	  </tr>
+	</table>
+</#list>
+<!-- 属性编辑 end -->

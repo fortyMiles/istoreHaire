@@ -1,0 +1,82 @@
+<!-- 对话框   -->
+
+<!-- 编辑广告位 -->
+<div id="add-advert-dialog" class="clearfix">
+	<table width="376" border="0" cellspacing="0" cellpadding="0">
+	 <#if advertType="1">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column"></span></td>
+	    <td width="293" id="img-td">
+				建议图片的像素为960*420
+		</td>
+		</tr>
+		</#if>
+		 <#if advertType="2">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column"></span></td>
+	    <td width="293" id="img-td">
+				建议图片的像素为310*165
+		</td>
+		</tr>
+		</#if>
+		
+		 <#if advertType="3">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column"></span></td>
+	    <td width="293" id="img-td">
+				建议图片的像素为960*320
+		</td>
+		</tr>
+		</#if>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">图片：</span></td>
+	    <td width="293" id="img-td">
+					<input type="file" id="uploadfile" name="uploadfile" style="width:200px;"/>
+					<input type="button" value="上传" id="url" onclick="uploadIMG();">
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100" height="30" align="center"><span class="column">链接：http://</span></td>
+	    <td width="263" id="img">
+					<input type="text" id="link-url" style="width: 88%;">
+				</td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">文字：</span></td>
+	    <td width="293" id="img">
+					<input type="text" id="image-desc" style="width: 88%;" value="">
+				</td>
+	  </tr>
+	 <#if advertType="3">
+	  <tr id="productSelect" >
+	  <td width="83" height="30" align="center"><span class="column">商品目录：</span></td>
+				<td width="293"  id="imgMessage1">
+				<select id="prodouctGroup" name="prodouctGroup">
+				<option value="">请选择</option>
+				<#list catalogList as list>
+					<option value="${list.catgroupId}">${list.name}</option>
+				</#list>
+				</select></td>
+				
+	</tr>
+</#if>
+	  
+	   <tr>
+	    <td width="83" height="30" align="center"><span class="column">图片：</span></td>
+	    <td width="293" id="imgresult" style="display:none;">		
+		</td>		
+	  </tr>
+			<tr>
+				<td width="293" style="display:none;" id="imgMessage"></td>
+				
+			</tr>
+	</table>
+</div>
+<!-- 新建广告位 end -->
+
+
+
+
+
+
+

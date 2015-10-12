@@ -1,0 +1,37 @@
+
+{
+	"total":${total},
+	"page":${page},
+    
+    "rows":[
+    	<#list CatList as List>
+		    	<#if !List_has_next>
+		    	{
+		    	 "id":"${List.catentryId}",
+		    		"cell":[
+						"${List.catentryId}",
+						"${List.name}",
+						"${List.partnumber}",
+						
+						"<button onclick='getSubjectOfCAT(\"${List.catentryId}\".toString());'>查看</button>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/istore/servlet/b2b/catmng/viewCatentryPage.do?catentryId=${List.catentryId}'><button>关联商品</button></a>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='getSubjectOfPic(\"${List.catentryId}\".toString());'>上传图片</button>"
+		    		]
+					
+				}
+			    <#else>
+			    {
+		    		 "id":"${List.catentryId}",
+		    		"cell":[
+						"${List.catentryId}",
+						"${List.name}",
+						"${List.partnumber}",
+						
+					"<button onclick='getSubjectOfCAT(\"${List.catentryId}\".toString());'>查看</button>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/istore/servlet/b2b/catmng/viewCatentryPage.do?catentryId=${List.catentryId}'><button>关联商品</button></a>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='getSubjectOfPic(\"${List.catentryId}\".toString());'>上传图片</button>"
+					]
+				},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }
+
+ 

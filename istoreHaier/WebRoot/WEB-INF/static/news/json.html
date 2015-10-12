@@ -1,0 +1,58 @@
+<#if Session["role"]?exists>
+	<#assign role = Session["role"]>
+<#else>
+	<#assign role = "">
+</#if>
+{
+	"total":${total},
+	"page":${page},
+    "records":${records},
+    "rows":[
+    	<#list xNewsList as xNews>
+		    	<#if !xNews_has_next>
+		    	{
+		    		"id":"${xNews_index + 1}",
+		    		"cell":[
+						"${xNews.xnews_id}",
+						"${xNews.title}",
+						"${xNews.createtime}",
+						"${xNews.author}",
+						"${xNews.xchannel_name}",
+						"${xNews.seq}",
+						"${xNews.xgroup_name}",
+						"${xNews.status_id}",
+						"${xNews.status_name}",
+						"<button onclick='javascript:viewNews(${xNews.xnews_id});'>查看</button>"
+						<#if role=="">
+						,
+						"<button onclick='javascript:approveNews(${xNews.xnews_id}, \"${xNews.status_id}\");'>通过</button>",
+						"<button onclick='javascript:rejectNews(${xNews.xnews_id}, \"${xNews.status_id}\");'>拒绝</button>"
+						</#if>
+		    		]
+				}
+			    <#else>
+			    {
+		    		"id":"${xNews_index + 1}",
+		    		"cell":[
+						"${xNews.xnews_id}",
+						"${xNews.title}",
+						"${xNews.createtime}",
+						"${xNews.author}",
+						"${xNews.xchannel_name}",
+						"${xNews.seq}",
+						"${xNews.xgroup_name}",
+						"${xNews.status_id}",
+						"${xNews.status_name}",
+						"<button onclick='javascript:viewNews(${xNews.xnews_id});'>查看</button>"
+						<#if role=="">
+						,
+						"<button onclick='javascript:approveNews(${xNews.xnews_id}, \"${xNews.status_id}\");'>通过</button>",
+						"<button onclick='javascript:rejectNews(${xNews.xnews_id}, \"${xNews.status_id}\");'>拒绝</button>"
+						</#if>
+		    		]
+				},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }

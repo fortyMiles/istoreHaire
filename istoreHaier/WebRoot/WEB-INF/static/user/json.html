@@ -1,0 +1,34 @@
+
+{
+	"total":${total},
+    "records":${records},
+    "rows":[
+    	<#list userListJson as ss>
+		    {"id":"${ ss.usersId}",
+			    <#if !ss_has_next>
+			    	"cell":[
+			    	 	     "${ ss.usersId}",
+			    	 		 "${ ss.userName}",
+			    	 		 "${ ss.logonId}",
+			    	 		 "${ ss.codeNum}",
+			    	 		 "${ ss.phone}",
+			    	 		 "${ ss.birthday}",
+			    	 		 "${ ss.shopId}"
+			    	 		]}
+			    <#else>
+			    	"cell":[
+			    	 	      "${ ss.usersId}",
+			    	 		  "${ ss.userName}",
+			    	 		  "${ ss.logonId}",
+			    	 		  "${ ss.codeNum}",
+			    	 		  "${ ss.phone}",
+			    	 		  "${ ss.birthday}",
+			    	 		   "${ ss.shopId}"
+			    	 	   ]},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }
+
+ 

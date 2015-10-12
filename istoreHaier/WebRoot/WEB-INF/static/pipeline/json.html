@@ -1,0 +1,37 @@
+
+{
+	"total":${pager.pageCount},
+    "records":${pager.listCount},
+    "rows":[
+    	<#list pipelineList as ss>
+		    {"id":"${ ss.popeline_id}",
+			    	"cell":[
+			    	 	     "${ ss.popeline_id}",
+			    	 		 "${ ss.status}",
+			    	 		 "${ ss.name}",
+			    	 		 "${ ss.address_name}",
+			    	 		 "${ ss.submit_date}",
+			    	 		 "${ ss.last_update}",
+			    	 		 "${ ss.orders_id}",
+			    	 		 "${ ss.expected_date}",
+			    	 		 "${ ss.confidence}",
+			    	 		 "${ ss.xcomment}",
+			    	 		 "${ ss.phone}",
+			    	 		 "${ ss.email}",
+			    	 		 "${ ss.project_type}",
+			    	 		 "${ ss.project_area}",
+			    	 		 "${ ss.location}",
+			    	 		 "${ ss.n_time}",
+			    	 		 "<button onclick='sh_pipeline(${ss.popeline_id},\"${ss.status}\");'>审核</button>"
+			    	 		]}
+				<#if ss_has_next>
+					,
+				<#else>
+				
+				</#if>
+		</#list>
+    ]
+    	 	
+ }
+
+ 

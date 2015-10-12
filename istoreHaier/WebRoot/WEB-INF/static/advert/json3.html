@@ -1,0 +1,66 @@
+
+{
+	"total":1,
+    "records":1,
+    "rows":[
+    	<#list advertListJson as advert>
+		    {
+		    	"id":"${advert_index + 1}",
+			    <#if !advert_has_next>
+			    	"cell":[
+			    	 	     "${ advert.id}",
+			    	 		 "<img  src='http://10.176.0.40/advert/images/${ advert.image}' width='300' height='100'/>",
+			    	 		 <#if advert.url??>
+			    	 		 	"${ advert.url}",
+			    	 		 <#else>
+			    	 		 	"",
+			    	 		 </#if>
+			    	 		 <#if advert.title??>
+			    	 		 "${advert.title}",
+			    	 		 <#else>
+			    	 		 	"",
+			    	 		 </#if>
+			    	 		 <#if advert.priority??>
+			    	 		 "${advert.priority}",
+			    	 		 <#else>
+			    	 		 "",
+			    	 		 </#if>
+			    	 		  <#if advert.name??>
+			    	 	    "${advert.name}"
+			    	 	    <#else>
+			    	 	    ""
+			    	 	    </#if>
+			    	 	    
+			    	 		]}
+			    <#else>
+			    	"cell":[
+			    	 	      "${ advert.id}",
+			    	 		  "<img  src='http://10.176.0.40/advert/images/${ advert.image}' width='300' height='100'/>",
+			    	 		   <#if advert.url??>
+			    	 		  "${ advert.url}",
+			    	 		   <#else>
+			    	 		 	"",
+			    	 		 	 </#if>
+			    	 		 <#if advert.title??>
+			    	 		 "${advert.title}",
+			    	 		 <#else>
+			    	 		 	"",
+			    	 		 </#if>
+			    	 		 <#if advert.priority??>
+			    	 		  "${advert.priority}",
+			    	 		  <#else>
+			    	 		  "",
+			    	 		  </#if>
+			    	 		 <#if advert.name??>
+			    	 	    "${advert.name}"
+			    	 	    <#else>
+			    	 	    ""
+			    	 	    </#if>
+			    	 	   ]},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }
+
+ 

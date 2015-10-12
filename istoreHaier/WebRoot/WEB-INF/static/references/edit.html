@@ -1,0 +1,90 @@
+<!-- 频道操作对话框   -->
+
+<!-- 频道编辑start -->
+<#list xReferencesList as xReferences>
+	<table width="800" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">序列表：</span></td>
+	    <td class="w680"><input type="text" id="edit_serialnumber" name="edit_serialnumber" class="text input-text-width" value="${xReferences.serialnumber}" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">国家：</span></td>
+	    <td class="w680"><input type="text" id="edit_country" name="edit_country" class="text input-text-width" value="${xReferences.country}" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">工程名称或所在地：</span></td>
+	    <td class="w680"><input type="text" id="edit_projectplace" name="edit_projectplace" class="text input-text-width" value="${xReferences.projectplace}" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">描述：</span></td>
+	    <td class="w680"><textarea name="edit_description" class="uniform textarea_resize">${xReferences.description}</textarea></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">类型：</span></td>
+	    <td class="w680"><input type="text" id="edit_type" name="edit_type" class="text input-text-width" value="${xReferences.type}" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">安装时间：</span></td>
+	    <td class="w680"><input type="text" id="edit_installtime" name="edit_installtime" class="text input-text-width" value="${xReferences.installtime}" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">产品系列：</span></td>
+	    <td class="w680"><input type="text" id="edit_installseries" name="edit_installseries" class="text input-text-width" value="${xReferences.installseries}" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">详细信息：</span></td>
+	    <td class="w680"><textarea name="edit_installdetails" class="uniform textarea_resize">${xReferences.installdetails}</textarea></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">装机容量：</span></td>
+	    <td class="w680"><input type="text" id="edit_totalcapacity" name="edit_totalcapacity" class="text input-text-width" value="${xReferences.totalcapacity}" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">核心竞争指标：</span></td>
+	    <td class="w680"><textarea name="edit_keycapacity" class="uniform textarea_resize">${xReferences.keycapacity}</textarea></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">优先级：</span></td>
+	    <td width="717"><input style="width: 480px;" type="text" id="edit_seq" name="edit_seq" class="text input-text-width" value="${xReferences.seq}" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">选择目录：</span></td>
+	    <td class="w680">
+	    	<select name="edit_catgroup" id="edit_catgroup">
+	    		<#list catgroupList as catgroup>
+	    			<#if xReferences.catgroup_id == catgroup.catgroup_id>
+			    		<option value="${catgroup.catgroup_id}" selected="selected">${catgroup.name}</option>
+			    	<#else>
+			    		<option value="${catgroup.catgroup_id}">${catgroup.name}</option>
+	    			</#if>
+	    		</#list>
+	    	</select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">群组：</span></td>
+	    <td width="293">
+	    	<#assign xgroup="${xReferences.xgroup_id}">
+	    	<#assign xarraygroup=xgroup?split(",")>   	
+	    
+	    	<#assign xarraygroups = ["1", "普通", "2", "会员", "3", "不限"]>     	
+	    	<#list xarraygroups as xgroups_id>
+	    		<#if xgroups_id_index%2 == 0>
+	    			<#if xarraygroup?seq_contains(xgroups_id)>
+	    				<input type="checkbox" name="edit_group" class="input-radio-width" value="${xarraygroups[xgroups_id_index]}" checked="checked" />${xarraygroups[xgroups_id_index+1]}
+	    			<#else>
+	    				<input type="checkbox" name="edit_group" class="input-radio-width" value="${xarraygroups[xgroups_id_index]}" />${xarraygroups[xgroups_id_index+1]}
+	    			</#if>
+	    		</#if>
+	    	</#list>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">样板工程图片：</span></td>
+	    <td width="717">
+	    	<textarea id="edit_pictures" name="edit_pictures" style="width:728px; height:300px;">${xReferences.pictures}</textarea>
+	    </td>
+	  </tr>
+	</table>
+</#list>
+<!-- 频道编辑 end -->

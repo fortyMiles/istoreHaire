@@ -1,0 +1,58 @@
+
+{
+	"total":${total},
+    "records":${records},
+    "rows":[
+    	<#list userList as ss>
+		    {"id":"${ ss.usersId}",
+			    <#if !ss_has_next>
+			    	"cell":[
+				    	"${ss.usersId}",
+				    	"${ss.logonId}",
+				    		<#if ss.customer_name??>
+				    	"${ss.customer_name}",
+				    	<#else>
+				    	"",
+				    	</#if>
+				    	<#if ss.type??>
+				    	"${ss.type}",
+				    	<#else>
+				    	    "",
+				    	    </#if>
+				    		<#if ss.status??>
+				    	"${ss.status}",
+				    	<#else>
+				    	"",
+				    	</#if>
+				    	"${ss.lastUpdate}",
+				    	"<button onclick='showDetail(\"${ss.usersId}\".toString());'>查看详情</button>"
+			    	 		]}
+			    <#else>
+			    	"cell":[
+			    	 	"${ss.usersId}",
+				    	"${ss.logonId}",
+				    	<#if ss.customer_name??>
+				    	"${ss.customer_name}",
+				    	<#else>
+				    	"",
+				    	</#if>
+				    	<#if ss.type??>
+				    	"${ss.type}",
+				    	<#else>
+				    	    "",
+				    	    </#if>
+				    	<#if ss.status??>
+				    	"${ss.status}",
+				    	<#else>
+				    	"",
+				    	</#if>
+				    	"${ss.lastUpdate}",
+				    	"<button onclick='showDetail(\"${ss.usersId}\".toString());'>查看详情</button>"
+			    	 	   ]},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }
+
+ 

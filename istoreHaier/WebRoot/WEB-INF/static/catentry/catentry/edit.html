@@ -1,0 +1,16 @@
+<!-- 属性操作对话框   -->
+
+<!-- 属性编辑start -->
+<#list AttrList as Attr>
+	<table width="376" border="0" cellspacing="0" cellpadding="0" style="margin-top: 10px;">
+	  <tr>
+	    <td width="83" height="30" align="center" ><span class="column">属性名称：</span></td>
+	    <td width="293"><input type="text" id="edit_xchannel_name" name="edit_xchannel_name" class="text input-text-width" value="${Attr.name}" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="60" align="center"><span class="column">属性内容：</span></td>
+	    <td width="293"><input type="text" id="edit_seq" name="edit_seq" class="text input-text-width" value="${Attr.description}" /></td>
+	  </tr>
+	</table>
+</#list>
+<!-- 属性编辑 end -->

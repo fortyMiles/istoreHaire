@@ -1,0 +1,29 @@
+
+{
+	"total":${total},
+    "records":${records},
+    "rows":[
+    	<#list orderDetailListJson as ss>
+		    {"id":"${ ss.orderId}",
+			    	"cell":[
+			    	 	     "${ ss.orderitems_id}",
+			    	 		 "${ ss.catentry_id}",
+			    	 		 "${ ss.partnum}",
+			    	 		 "${ ss.member_id}",
+			    	 		 "${ ss.price}",
+			    	 		 "${ ss.quantity}",
+			    	 		 "${ ss.totalproduct}",
+			    	 		 "${ ss.status}",
+			    	 		 "${ ss.lastupdate}"
+			    	 		]}
+				<#if ss_has_next>
+					,
+				<#else>
+				
+				</#if>
+		</#list>
+    ]
+    	 	
+ }
+
+ 

@@ -1,0 +1,156 @@
+<!-- 频道操作对话框   -->
+
+<!-- 新建频道start -->
+<div id="add-references-dialog" style="display: none" class="clearfix">
+	<table width="800" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">序列表：</span></td>
+	    <td class="w680"><input type="text" id="add_serialnumber" name="add_serialnumber" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">国家：</span></td>
+	    <td class="w680"><input type="text" id="add_country" name="add_country" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">工程名称或所在地：</span></td>
+	    <td class="w680"><input type="text" id="add_projectplace" name="add_projectplace" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">描述：</span></td>
+	    <td class="w680"><textarea name="add_description" class="uniform textarea_resize"></textarea></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">类型：</span></td>
+	    <td class="w680"><input type="text" id="add_type" name="add_type" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">安装时间：</span></td>
+	    <td class="w680"><input type="text" id="add_installtime" name="add_installtime" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">产品系列：</span></td>
+	    <td class="w680"><input type="text" id="add_installseries" name="add_installseries" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">详细信息：</span></td>
+	    <td class="w680"><textarea name="add_installdetails" class="uniform textarea_resize"></textarea></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">装机容量：</span></td>
+	    <td class="w680"><input type="text" id="add_totalcapacity" name="add_totalcapacity" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">核心竞争指标：</span></td>
+	    <td class="w680"><textarea name="add_keycapacity" class="uniform textarea_resize"></textarea></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">优先级：</span></td>
+	    <td class="w680"><input type="text" id="add_seq" name="add_seq" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">选择目录：</span></td>
+	    <td class="w680">
+	    	<select name="add_catgroup" id="add_catgroup">
+	    		<option value="0">请选择</option>
+	    		<#list catgroupList as catgroup>
+		    		<option value="${catgroup.catgroup_id}">${catgroup.name}</option>
+	    		</#list>
+	    	</select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">群组：</span></td>
+	    <td class="w680">
+	    	<input type="checkbox" id="add_group_normal" name="add_group" class="input-radio-width" value="1" />普通
+	    	<input type="checkbox" id="add_group_vip" name="add_group" class="input-radio-width" value="2" />会员
+	    	<input type="checkbox" id="add_group_all" name="add_group" class="input-radio-width" value="3" checked="checked" />不限
+	    </td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">样板工程图片：</span></td>
+	    <td class="w680">
+	    	<textarea id="add_pictures" name="add_pictures" style="width:680px; height:300px;"></textarea>
+	    </td>
+	  </tr>
+	</table>
+</div>
+<!-- 新建频道 end -->
+
+<!-- 警告提示框start -->
+<div id="block-alert-dialog" style="display: none">
+	<p>
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span>
+		<strong>警告:</strong> 您确定要冻结/解锁 这些用户
+	</p>
+</div>
+<!-- 警告提示框alert end -->
+
+<!-- 搜索对话框 start -->
+<div id="search-references-dialog" style="display: none" class="clearfix">
+	<table width="800" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">序列表：</span></td>
+	    <td class="w680"><input type="text" id="search_serialnumber" name="search_serialnumber" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">国家：</span></td>
+	    <td class="w680"><input type="text" id="search_country" name="search_country" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">工程名称或所在地：</span></td>
+	    <td class="w680"><input type="text" id="search_projectplace" name="search_projectplace" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">描述：</span></td>
+	    <td class="w680"><textarea name="search_description" class="uniform textarea_resize"></textarea></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">类型：</span></td>
+	    <td class="w680"><input type="text" id="search_type" name="search_type" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">安装时间：</span></td>
+	    <td class="w680"><input type="text" id="search_installtime" name="search_installtime" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">产品系列：</span></td>
+	    <td class="w680"><input type="text" id="search_installseries" name="search_installseries" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">详细信息：</span></td>
+	    <td class="w680"><textarea name="search_installdetails" class="uniform textarea_resize"></textarea></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">装机容量：</span></td>
+	    <td class="w680"><input type="text" id="search_totalcapacity" name="search_totalcapacity" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">核心竞争指标：</span></td>
+	    <td class="w680"><textarea name="search_keycapacity" class="uniform textarea_resize"></textarea></td>
+	  </tr>	  
+	</table>
+</div>
+<!-- 搜索对话框 end -->
+
+<!-- 拒绝对话框 start -->
+<div id="reject-references-dialog" style="display: none" class="clearfix">
+	<table width="800" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">拒绝原因说明：</span></td>
+	    <td class="w680"><textarea id="reject_xcomment" name="reject_xcomment" class="uniform textarea_resize"></textarea></td>
+	  </tr>
+	</table>
+</div>
+<!-- 拒绝对话框 end -->
+
+<!-- 编辑对话框 start -->
+<div id="edit-references-dialog" style="display: none" class="clearfix"></div>
+<!-- 编辑对话框 end -->
+
+<!-- 查看对话框 start -->
+<div id="view-references-dialog" style="display: none" class="clearfix"></div>
+<!-- 查看对话框 end -->
+
+<!-- 拒绝原因对话框 start -->
+<div id="reject-case-dialog" style="display: none" class="clearfix"></div>
+<!-- 拒绝原因对话框 end -->

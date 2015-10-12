@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>电子商务后台管理</title>
+		<link rel="stylesheet" href="${base}/static/css/core.css" charset="utf-8" />
+		<script src="${base}/static/js/common/jquery-1.8.3.min.js" charset="utf-8"></script>
+		<script src="${base}/static/js/user/user-login.js" charset="utf-8"></script>
+	</head>
+	<body class="special-page"  onkeydown="KeyDown()">
+		
+		<div id="container" >
+			<div id="login-box">
+				<div class="block-border">
+				
+					<div class="block-header">	
+						<h1>海尔后台管理系统</h1>
+					</div>
+					<form id="login-form" class="block-content form fljw360ie6">
+
+								<div class="alert error no-margin top" style="display:none" id="alertBox-generated">
+								</div>
+			
+					  	<table width="100%" class="login-table">
+					  	 	<tr height="32">
+					  	 		<td width="19%" align="center"><span class="login-label">账号</span> </td>
+					  	 		<td><input type="text" id="username" name="dushi_logonId" class="text text-width-100"></td>
+					  	 	</tr>
+					  	 	<tr height="32">
+					  	 		<td align="center"><span class="login-label">密码 </span></td>
+					  	 		<td><input type="password" id="password" name="dushi_password" class="text text-width-100"></td>
+					  	 	</tr>
+					  	 	<tr height="20">
+					  	 		<td colspan="2">&nbsp;</td>
+					  	 	</tr>
+					  	</table>
+						<div class="block-actions"> 
+							<ul class="actions-right"> 
+								<li><a href="javascript:void(0);" name="recover_password" class="button" id="dushi_logon">登入</a></li> 
+							</ul>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+			
+	</body>
+</html>

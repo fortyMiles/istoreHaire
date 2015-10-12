@@ -1,0 +1,35 @@
+
+{
+	"total":${total},
+	"page":${page},
+    
+    "rows":[
+    	<#list Piclist as List>
+		    	<#if !List_has_next>
+		    	{
+		    	 "id":"${List.imgurl}",
+		    		"cell":[
+						"<img src='http://web1.wcata.com/product/images/${List.catentry_id}/c/${List.imgurl}' />",
+						"${List.catentry_id}",
+						"${List.seq}",
+						"<button onclick='updateSeq(${List.catentry_id},${List.seq});'>修改序号</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='deletePic(${List.seq},${List.catentry_id})'>删除</button>"
+		    		]
+					
+				}
+			    <#else>
+			    {
+		    		"id":"${List.imgurl}",
+		    		"cell":[
+						"<img src='http://web1.wcata.com/product/images/${List.catentry_id}/c/${List.imgurl}' />",
+						"${List.catentry_id}",
+						"${List.seq}",	
+					"<button onclick='updateSeq(${List.catentry_id},${List.seq})'>修改序号</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='deletePic(${List.seq},${List.catentry_id})'>删除</button>"
+					]
+				},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }
+
+ 

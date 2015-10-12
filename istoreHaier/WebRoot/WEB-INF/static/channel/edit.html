@@ -1,0 +1,29 @@
+<!-- 频道操作对话框   -->
+
+<!-- 频道编辑start -->
+<#list xChannelList as xChannel>
+	<table width="376" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">频道名称：</span></td>
+	    <td width="293"><input type="text" id="edit_xchannel_name" name="edit_xchannel_name" class="text input-text-width" value="${xChannel.xchannel_name}" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">优先级：</span></td>
+	    <td width="293"><input type="text" id="edit_seq" name="edit_seq" class="text input-text-width" value="${xChannel.seq}" /></td>
+	  </tr>
+	  <tr style="display:none;">
+	    <td width="83" height="30" align="center"><span class="column">类型：</span></td>
+	    <td width="293">
+	    	<#if xChannel.type == "C">
+		    	<input type="radio" id="edit_type_channel" name="edit_type" class="input-radio-width" value="C" checked="checked" />样板工程
+	    		<input type="radio" id="edit_type_news" name="edit_type" class="input-radio-width" value="N" />新闻
+			</#if>
+			<#if xChannel.type == "N">
+				<input type="radio" id="edit_type_channel" name="edit_type" class="input-radio-width" value="C" />样板工程
+	    		<input type="radio" id="edit_type_news" name="edit_type" class="input-radio-width" value="N" checked="checked" />新闻
+			</#if>
+	    </td>
+	  </tr>
+	</table>
+</#list>
+<!-- 频道编辑 end -->

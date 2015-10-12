@@ -1,0 +1,27 @@
+<table width="500" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="93" height="30" align="center"><span class="column">商机编号：</span></td>
+	    <td width="283">
+	    	<input type="text" id="editText" readonly="readonly" disabled="disabled"/> 
+	    </td>
+	  </tr>
+	   <tr>
+	    <td width="93" height="30" align="center"><span class="column">商机状态：</span></td>
+	    <td width="283">
+	    	<select id="sel_status" onchange="opne_order();"></select>
+	    </td>
+	  </tr>
+	   <tr id="tr_orderid" style="display: none;">
+	    <td width="93" height="30" align="center"><span class="column">转换订单号：</span></td>
+	    <td width="283">
+	    	<input type="text" id="in_orderid" /> 
+	    </td>
+	  </tr>
+	  
+	  <tr>
+	  	<td>备注：</td>
+	  <td>
+	  			<textarea rows="5" cols="5" id="txt_comment" style="width: 318px; height: 113px;"></textarea>
+			</td>	  
+	  </tr>
+	</table>

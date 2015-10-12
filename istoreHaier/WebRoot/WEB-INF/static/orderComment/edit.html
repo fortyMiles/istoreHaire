@@ -1,0 +1,47 @@
+<!-- 评论操作对话框   -->
+
+<!-- 评论回复start -->
+<#list orderCommentList as orderComment>
+	<table width="500" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="93" height="30" align="center"><span class="column">订单编号：</span></td>
+	    <td width="283">${orderComment.orders_id} </td>
+	  </tr>
+	  <tr>
+	    <td width="93" height="30" align="center"><span class="column">评论人：</span></td>
+	    <td width="283">${orderComment.user_name}</td>
+	  </tr>
+	  <tr>
+	    <td width="93" height="30" align="center"><span class="column">商品质量评分：</span></td>
+	    <td width="283">${orderComment.quality}</td>
+	  </tr>
+	  <tr>
+	    <td width="93" height="30" align="center"><span class="column">服务评分：</span></td>
+	    <td width="283">${orderComment.service}</td>
+	  </tr>
+	  <tr>
+	    <td width="93" height="30" align="center"><span class="column">物流评分：</span></td>
+	    <td width="283">${orderComment.logistic}</td>
+	  </tr>
+	  <tr>
+	    <td width="93" height="30" align="center"><span class="column">补充评论：</span></td>
+	    <td width="283">${orderComment.comment_content}</td>
+	  </tr>
+	  <tr>
+	    <td width="93" height="30" align="center"><span class="column">评论时间：</span></td>
+	    <td width="283">${orderComment.lastupdate}</td>
+	  </tr>
+	  <tr>
+	    <td width="93" height="30" align="center"><span class="column">回复内容：</span></td>
+	    <td width="283">
+	    <#if orderComment.isReplied=="Y">
+	    	<textarea id="replyContent" readonly cols="50" rows="5">${orderComment.replyMessage}</textarea>
+	    <#else>
+	    	<textarea id="replyContent" cols="50" rows="5"></textarea>
+	    	请输入300字以内的回复内容。
+	    </#if>
+	    </td>
+	  </tr>
+	</table>
+</#list>
+<!-- 评论回复 end -->

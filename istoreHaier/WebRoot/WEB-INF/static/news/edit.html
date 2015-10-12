@@ -1,0 +1,40 @@
+<!-- 频道操作对话框   -->
+
+<!-- 频道编辑start -->
+<#list xNewsList as xNews>
+	<table width="800" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">新闻标题：</span></td>
+	    <td width="717"><input style="width: 480px;" type="text" id="edit_title" name="edit_title" class="text input-text-width" value="${xNews.title}" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">优先级：</span></td>
+	    <td width="717"><input style="width: 480px;" type="text" id="edit_seq" name="edit_seq" class="text input-text-width" value="${xNews.seq}" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">群组：</span></td>
+	    <td width="293">
+	    	<#assign xgroup="${xNews.xgroup_id}">
+	    	<#assign xarraygroup=xgroup?split(",")>   	
+	    
+	    	<#assign xarraygroups = ["1", "普通", "2", "会员", "3", "不限"]>     	
+	    	<#list xarraygroups as xgroups_id>
+	    		<#if xgroups_id_index%2 == 0>
+	    			<#if xarraygroup?seq_contains(xgroups_id)>
+	    				<input type="checkbox" name="edit_group" class="input-radio-width" value="${xarraygroups[xgroups_id_index]}" checked="checked" />${xarraygroups[xgroups_id_index+1]}
+	    			<#else>
+	    				<input type="checkbox" name="edit_group" class="input-radio-width" value="${xarraygroups[xgroups_id_index]}" />${xarraygroups[xgroups_id_index+1]}
+	    			</#if>
+	    		</#if>
+	    	</#list>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">内容：</span></td>
+	    <td width="717">
+	    	<textarea id="edit_details" name="edit_details" style="width:728px;height:300px;">${xNews.details}</textarea>
+	    </td>
+	  </tr>
+	</table>
+</#list>
+<!-- 频道编辑 end -->

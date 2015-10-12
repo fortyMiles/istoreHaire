@@ -1,0 +1,35 @@
+
+{
+	"total":${total},
+	"page":${page},
+    "records":${records},
+    "rows":[
+    	<#list AttrvalList as valList>
+		    	<#if !valList_has_next>
+		    	{
+		    	 "id":"${valList.attrvalId}",
+		    		"cell":[
+						"${valList.attrvalId}",
+						"${valList.attrval}",
+						"${valList.attrvalsq}"
+						
+		    		]
+					
+				}
+			    <#else>
+			    {
+		    		 "id":"${valList.attrvalId}",
+		    		"cell":[
+						"${valList.attrvalId}",
+						"${valList.attrval}",
+						"${valList.attrvalsq}"
+					
+					]
+				},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }
+
+ 

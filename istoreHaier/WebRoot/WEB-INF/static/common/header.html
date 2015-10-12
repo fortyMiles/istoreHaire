@@ -1,0 +1,31 @@
+<div id="header-surround">
+	<div id="header">
+	<script src="${base}/static/js/user/user-logout.js" charset="utf-8"></script>
+		<img class="logo" src="${base}/static/image/logo.png" alt="Grape">
+<!--		<div class="divider-header divider-vertical"></div>-->
+<!--		<a href="javascript:void(0);" >-->
+<!--			<span class="btn-info"></span>-->
+<!--		</a>-->
+		
+					
+		<!-- 用户登入信息 start -->
+		<div id="user-info">
+			<ul>
+				<li class="user-info-message">您好${username}
+					<a href="javascript:void(0);">  
+						<span class="username"></span>
+					</a> 
+				</li>
+				<li>
+					<a href="javascript:void(0);" name="dushi_logout"  class="button red" id="dushi_logout"> 注销 </a>
+				</li>
+			</ul>
+		</div>
+		<!-- 用户登入信息 end -->
+		
+		<!-- 高级设置 start -->
+		<#include "dialog.html"/>
+		<!-- 高级设置 end -->
+	</div>
+</div>
+			

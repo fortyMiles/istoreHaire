@@ -1,0 +1,13 @@
+<#list hpbImageList as hpbList>
+	<li>
+		<#if hpbList['url'] == "">
+			<a href="javascript:void(0);">
+				<img src="${hpbList['image']}" width="550" height="200" />
+			</a>
+		<#else>		
+			<a href="${hpbList['url']}">
+				<img src="${hpbList['image']}" width="550" height="200" />
+			</a>
+		</#if>
+	</li>				
+</#list>

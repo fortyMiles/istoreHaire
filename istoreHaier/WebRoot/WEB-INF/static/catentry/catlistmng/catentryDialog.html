@@ -1,0 +1,71 @@
+<script>
+	$(document).ready(function(){
+		
+		jQuery("#addCatentry").jqGrid({
+			url: "/istore/servlet/b2b/catmng/viewAddCatentry.do",
+			datatype: "json",
+			colNames: ['商品id','商品款号','商品名称'],
+			colModel: [{
+				name: 'catentryId',
+				index: 'catentryId',
+				width: 100,
+				align: "center"
+			},{
+				name:'partnumber',
+				index:'partnumber',
+				width:130,
+				align:"center"
+			},
+			{
+				name: 'name',
+				index: 'name',
+				width: 280,
+				align: "center"
+			}],
+			rowNum: 10,
+			rowList: [10,15,20],
+			pager: '#addCatentry_pager',
+			sortname: 'CREATETIME',
+			viewrecords: true,
+			sortorder: "DESC",
+			width:500,
+			height: 'auto',
+			multiselect: true,
+			rownumbers: true,
+			caption: false,
+//			toolbar: [true, "top"],
+			gridComplete: function() {
+				
+			}
+		});
+});
+	function addSearch(){
+		jQuery("#addCatentry").jqGrid('setGridParam', {
+			url: "/istore/servlet/b2b/catalog/viewAddCatentry.do?"+"partnumber="+$("#partnumber").val()+"&catentryName="+$("#catentryName").val(),
+			postData:{
+				partnumber:$("#partnumber").val(),
+				catentryName:$("#catentryName").val()
+			}, 
+			page: 1
+		}).trigger("reloadGrid");
+	}
+</script>
+<div id="add-catentry-dialog" style="display: none" class="clearfix">
+	<div style="align:center">
+		款号：<input type="text" id="partnumber"/>
+		商品名称：<input type="text" id="catentryName"/>
+		<input type="button" value="搜索" onclick="addSearch();"/>
+</div>
+<br/>
+	<table id="addCatentry"></table>
+	<div id="addCatentry_pager"></div>
+</div>
+
+<div id="mod-catentry-seq" style="display: none" class="clearfix">
+	<table width="376" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="83" height="30" align="center"><span class="column">*序列号：</span></td>
+	    		<td width="293"><input type="text" id="seq" class="text input-text-width" /></td>
+			</tr>
+	</table>
+</div>

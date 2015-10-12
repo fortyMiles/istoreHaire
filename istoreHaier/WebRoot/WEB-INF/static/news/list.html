@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title><@s.m "Enterprise.Cloud.B2B"/></title>
+		<link rel="stylesheet" href="${base}/static/css/core.css" charset="utf-8"/>
+		<link rel="stylesheet" href="${base}/static/css/ui.jqgrid.css" charset="utf-8"/>
+		<link rel="stylesheet" href="${base}/static/css/jquery-ui-1.10.3.custom.css" charset="utf-8"/>
+		<script src="${base}/static/js/common/jquery-1.8.3.min.js" charset="utf-8"></script>
+		<script src="${base}/static/js/common/modernizr-2.0.6.min.js" charset="utf-8"></script>
+		<script src="${base}/static/js/common/jquery.custom.min.js" id="navigation" charset="utf-8" data="new"></script>
+		<script src="${base}/static/js/common/jquery-ui-1.10.3.custom.js" charset="utf-8"></script>
+		<script src="${base}/static/js/common/jquery.grid.min.js" charset="utf-8"></script>
+		<script src="${base}/static/js/kindeditor/kindeditor.js" type="text/javascript"  charset="utf-8"></script>
+		<script src="${base}/static/js/kindeditor/lang/zh_CN.js" type="text/javascript"  charset="utf-8"></script>
+		<script src="${base}/static/js/ckeditor/ckeditor.js" type="text/javascript"  charset="utf-8"></script>
+		<script src="${base}/static/js/news/news-list.js" type="text/javascript"  charset="utf-8"></script>
+		<script src="${base}/static/js/news/news.js" type="text/javascript"  charset="utf-8"></script>
+	</head>
+	<body id="top">
+		<div id="container">
+			<!-- 头部start -->
+			<#include "../common/header.html"/>
+			<!-- 头部end -->
+			<div class="fix-shadow-bottom-height"></div>
+			
+			<#assign expand ="order"/>
+			<!-- 下拉菜单start -->
+			<#include "../common/sidebar.html"/>
+			<!-- 下拉菜单end -->
+			
+			<!-- 用户列表 start -->
+			<div id="main">
+				<div id="title-bar"> 
+					<ul id="breadcrumbs">
+						<li>
+							<a href="${base}/servlet/b2b/frame.html">
+								<span id="bc-home"></span>
+							</a>
+						</li>
+						<li>
+							<a title="频道管理" href="/istore/servlet/b2b/channel/list.do">
+								频道管理
+							</a>
+						</li>
+						<li>
+							<a title="新闻管理" href="/istore/servlet/b2b/news/list.do">
+								新闻管理
+							</a>
+						</li>
+						<li class="no-hover">新闻列表</li>
+					</ul>
+				</div>
+				<div class="shadow-bottom shadow-titlebar"></div>
+				<div id="main-content">
+					
+					<div class="grid">
+						<div class="block-border">
+							<table id="news"></table>
+							<div id="news_pager"></div>
+						</div>
+					</div>
+			
+				</div>
+			</div>
+			<!-- 用户列表end-->
+			
+			<!-- 底部start -->
+			<#include "../common/footer.html"/>
+			<!-- 底部end -->
+			
+			<!-- 对话框 start -->
+			<#include "dialog.html"/>
+			<!-- 对话框 end -->
+		</div>
+	</body>
+</html>

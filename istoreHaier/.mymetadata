@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="istoreHaier"
+  id="myeclipse.1372307559745"
+  context-root="/istore"
+  j2ee-spec="1.4"
+  archive="istoreHaier.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

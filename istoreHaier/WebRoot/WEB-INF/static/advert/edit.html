@@ -1,0 +1,106 @@
+<!-- 对话框   -->
+
+<!-- 编辑广告位 -->
+<#list advertlist as advert>
+	<table width="376" border="0" cellspacing="0" cellpadding="0">
+	 <#if advertType="1">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column"></span></td>
+	    <td width="293" id="img-td">
+				建议图片的像素为960*420
+		</td>
+		</tr>
+		</#if>
+		 <#if advertType="2">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column"></span></td>
+	    <td width="293" id="img-td">
+				建议图片的像素为310*165
+		</td>
+		</tr>
+		</#if>
+		
+		 <#if advertType="3">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column"></span></td>
+	    <td width="293" id="img-td">
+				建议图片的像素为960*320
+		</td>
+		</tr>
+		</#if>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">图片：</span></td>
+	    <td width="293" id="img-td">
+					<input type="file" id="uploadfile1" name="uploadfile1" style="width:200px;"/>
+					<input type="button" value="上传" id="url" onclick="uploadIMG1();">
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100" height="30" align="center"><span class="column"> 链接：http://</span></td>
+	    <td width="263" id="img">
+	    <#if advert.url?? >
+					<input type="text" id="link-url1" style="width: 88%;" value="${advert.url}">
+		<#else>
+		<input type="text" id="link-url1" style="width: 88%;" value=" ">
+		</#if>
+				</td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">文字：</span></td>
+	    <td width="293" id="img">
+	       <#if advert.title?? >
+					<input type="text" id="image-desc1" style="width: 88%;" value="${advert.title}">
+			<#else>
+				<input type="text" id="image-desc1" style="width: 88%;" value="">
+			</#if>
+				</td>
+	  </tr>
+	  <input type="hidden" id="imagepath" value=" ${imagePath} " ></input>
+	  
+	  	 <#if advertType="3">
+	  <tr id="productSelect" >
+	  <td width="83" height="30" align="center"><span class="column">商品目录：</span></td>
+				<td width="293"  id="imgMessage1">
+				<select id="prodouctGroup" name="prodouctGroup">
+				
+				<#list catalogList as list>
+				<#if list.catgroupId=(advert.prodouctGroup ? number)>
+					<option value="${list.catgroupId}" selected="selected">${list.name}</option>
+				
+				</#if>
+				<#if list.catgroupId!=(advert.prodouctGroup ? number)>
+					<option value="${list.catgroupId}" >${list.name}</option>
+				
+				</#if>
+
+				
+				</#list>
+				</select></td>
+				
+	</tr>
+</#if>
+	  
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">图片：</span></td>
+	    <td width="293" id="imgresult1" style="display:none;">		
+		</td>		
+	  </tr>
+			<tr>
+				<td width="293" style="display:none;" id="imgMessage1"></td>
+				
+			</tr>
+	
+	
+	
+			
+	  
+	</table>
+</#list>
+<!-- 编辑广告位 end -->
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+<div id="sidebar">
+	<!-- 搜索文本框 start -->
+	<div id="search-bar"> 
+		<form method="post"  name="search-form" id="search-form" onsubmit="return false"> 
+			<input type="text" placeholder="搜索" autocomplete="off" value="" name="query" id="query" class="placeholder text"> 
+		</form> 
+	</div>
+	<!-- 搜索文本框 end -->
+				
+	<!-- 个人信息start -->
+	<section id="login-details">
+		<img class="img-left framed" src="${base}/static/image/avatar_small.png">
+		<h3>您的用户名</h3>
+		<h2>
+			<a href="javascript:void(0);" class="user-button">
+				&nbsp;${username}
+			</a>
+		</h2>
+	</section>
+	<!-- 个人信息end -->
+				
+	<!-- 导航菜单 start -->
+	<#include "nav.html"/>		
+	<!-- 导航菜单 end -->
+				
+</div>

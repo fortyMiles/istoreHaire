@@ -1,0 +1,77 @@
+<!-- 频道操作对话框   -->
+
+<!-- 新建频道start -->
+<div id="add-news-dialog" style="display: none" class="clearfix">
+	<table width="800" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">新闻标题：</span></td>
+	    <td width="717"><input style="width: 717px;" type="text" id="add_title" name="add_title" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">优先级：</span></td>
+	    <td width="717"><input style="width: 717px;" type="text" id="add_seq" name="add_seq" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">群组：</span></td>
+	    <td width="717">
+	    	<input type="checkbox" id="add_group_normal" name="add_group" class="input-radio-width" value="1" />普通
+	    	<input type="checkbox" id="add_group_vip" name="add_group" class="input-radio-width" value="2" />会员
+	    	<input type="checkbox" id="add_group_all" name="add_group" class="input-radio-width" value="3" checked="checked" />不限
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="40" align="center"><span class="column">KindEditor：</span></td>
+	    <td width="717">
+	    	<textarea id="add_details" name="add_details" style="width:728px; height:300px;"></textarea>
+	    </td>
+	  </tr>
+	</table>
+</div>
+<!-- 新建频道 end -->
+
+<!-- 警告提示框start -->
+<div id="block-alert-dialog" style="display: none">
+	<p>
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span>
+		<strong>警告:</strong> 您确定要冻结/解锁 这些用户
+	</p>
+</div>
+<!-- 警告提示框alert end -->
+
+<!-- 搜索对话框 start -->
+<div id="search-news-dialog" style="display: none" class="clearfix">
+	<table width="376" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">标题：</span></td>
+	    <td width="293"><input type="text" id="search_title" name="search_title" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">内容：</span></td>
+	    <td width="293"><input type="text" id="search_details" name="search_details" class="text input-text-width" /></td>
+	  </tr>
+	</table>
+</div>
+<!-- 搜索对话框 end -->
+
+<!-- 拒绝对话框 start -->
+<div id="reject-news-dialog" style="display: none" class="clearfix">
+	<table width="800" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td class="w150 h30" align="center"><span class="column">拒绝原因说明：</span></td>
+	    <td class="w650"><textarea id="reject_xcomment" name="reject_xcomment" class="uniform textarea_resize"></textarea></td>
+	  </tr>
+	</table>
+</div>
+<!-- 拒绝对话框 end -->
+
+<!-- 编辑对话框 start -->
+<div id="edit-news-dialog" style="display: none" class="clearfix"></div>
+<!-- 编辑对话框 end -->
+
+<!-- 查看对话框 start -->
+<div id="view-news-dialog" style="display: none" class="clearfix"></div>
+<!-- 查看对话框 end -->
+
+<!-- 拒绝原因对话框 start -->
+<div id="reject-case-dialog" style="display: none" class="clearfix"></div>
+<!-- 拒绝原因对话框 end -->

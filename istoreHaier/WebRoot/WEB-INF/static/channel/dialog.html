@@ -1,0 +1,51 @@
+<!-- 频道操作对话框   -->
+
+<!-- 新建频道start -->
+<div id="add-channel-dialog" style="display: none" class="clearfix">
+	<table width="376" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">频道名称：</span></td>
+	    <td width="293"><input type="text" id="add_xchannel_name" name="add_xchannel_name" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">优先级：</span></td>
+	    <td width="293"><input type="text" id="add_seq" name="add_seq" class="text input-text-width" /></td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">类型：</span></td>
+	    <td width="293">
+	    	<input type="radio" id="add_type_channel" name="add_type" class="input-radio-width" value="C" checked="checked" />样板工程
+    		<input type="radio" id="add_type_news" name="add_type" class="input-radio-width" value="N" />新闻
+	    </td>
+	  </tr>
+	</table>
+</div>
+<!-- 新建频道 end -->
+
+<!-- 警告提示框start -->
+<div id="block-alert-dialog" style="display: none">
+	<p>
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span>
+		<strong>警告:</strong> 您确定要冻结/解锁 这些用户
+	</p>
+</div>
+<!-- 警告提示框alert end -->
+
+<!-- 搜索对话框 start -->
+<div id="search-channel-dialog" style="display: none" class="clearfix">
+	<table width="376" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">类型：</span></td>
+	    <td width="293">
+			<input type="radio" id="search_type_all" name="search_type" class="input-radio-width" value="A" checked="checked" />全部
+	    	<input type="radio" id="search_type_channel" name="search_type" class="input-radio-width" value="C" />样板工程
+	   		<input type="radio" id="search_type_news" name="search_type" class="input-radio-width" value="N" />新闻
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="83" height="30" align="center"><span class="column">频道名称：</span></td>
+	    <td width="293"><input type="text" id="search_xchannel_name" name="search_xchannel_name" class="text input-text-width" /></td>
+	  </tr>
+	</table>
+</div>
+<!-- 搜索对话框 end -->

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd"
+	default-lazy-init="true">
+	
+	<context:component-scan base-package="com.istore" use-default-filters="false">
+ 	 	<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+  		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+  		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />
+	</context:component-scan>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="cacheSeconds" value="-1"/>
+		<property name="basenames">
+			<list>
+				<value>/WEB-INF/language/messages</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/config/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="ftpWeb1ClientUtil" class="com.istore.common.web.util.FtpWeb1ClientUtil" >
+		<property name="host" value="10.176.0.40"/>
+		<property name="port" value="21"/>
+		<property name="username" value="root"/>
+		<property name="password" value="passw0rd"/>
+		<property name="remoteDir" value="/opt/IBM/HTTPServer/conf/web/product/images"/>
+	</bean>
+	<!-- 
+	<bean id="ftpWeb2ClientUtil" class="com.store.b2b.common.util.FtpWeb2ClientUtil" >
+		<property name="host" value="${ftp.web2.image.host}"/>
+		<property name="port" value="${ftp.image.port}"/>
+		<property name="username" value="${ftp.image.username}"/>
+		<property name="password" value="${ftp.image.password}"/>
+		<property name="remoteDir" value="${ftp.image.remotedir}"/>
+	</bean>
+	 -->
+	
+	
+	 <bean id="app1" class="com.istore.common.web.util.FtpBean">  
+        <property name="host" value="10.176.0.40"/>  
+        <property name="port" value="21"/>  
+        <property name="username" value="root"/>  
+        <property name="password" value="passw0rd"/>  
+        <property name="remoteDir" value="/opt/IBM/WebSphere/AppServer/profiles/demo/installedApps/WC_demo_cell/WC_demo.ear/Stores.war/Aurora/Html/"/>  
+   	 </bean>  
+   	 <!--
+	 <bean id="app2" class="com.store.b2b.common.util.FtpBean">  
+        <property name="host" value="10.10.30.74"/>  
+        <property name="port" value="21"/>  
+        <property name="username" value="wasuser"/>  
+        <property name="password" value="dslrwcs"/>  
+        <property name="remoteDir" value="/opt/IBM/WebSphere/AppServer/profiles/Custom01/installedApps/WC_demo_cell/WC_demo.ear/Stores.war/Aurora/Html/"/>  
+   	 </bean>  
+   	 
+	 <bean id="app3" class="com.store.b2b.common.util.FtpBean">  
+        <property name="host" value="10.10.30.75"/>  
+        <property name="port" value="21"/>  
+        <property name="username" value="wasuser"/>  
+        <property name="password" value="dslrwcs"/>  
+        <property name="remoteDir" value="/opt/IBM/WebSphere/AppServer/profiles/Custom01/installedApps/WC_demo_cell/WC_demo.ear/Stores.war/Aurora/Html/"/>  
+   	 </bean>  
+	-->
+	 <bean id="web1" class="com.istore.common.web.util.FtpBean">  
+        <property name="host" value="10.176.0.40"/>  
+        <property name="port" value="21"/>  
+        <property name="username" value="root"/>  
+        <property name="password" value="passw0rd"/>  
+        <property name="remoteDir" value="/opt/IBM/HTTPServer/conf/web/product/images"/>  
+   	 </bean>  
+   	 
+	
+	
+	<bean id="ftpAppClientUtil" class="com.istore.common.web.util.FtpAppClientUtil" >
+		<property name="ftpBeans">
+		  <list>
+		 	 <ref bean="app1"/>
+		 	 <ref bean="web1"/>
+		  </list>
+		</property>
+	</bean>
+	
+		<!-- 线程池 -->
+	<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">    
+    	<property name="corePoolSize" value="5" />       
+  		<property name="maxPoolSize" value="10" />   
+        <property name="queueCapacity" value="25" />
+    </bean>  
+  
+	
+</beans>

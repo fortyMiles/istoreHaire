@@ -1,0 +1,43 @@
+{
+	"total":${total},
+	"page":${page},
+    "records":${records},
+    "rows":[
+    	<#list xChannelList as xChannel>
+		    	<#if !xChannel_has_next>
+		    	{
+		    		"id":"${xChannel_index + 1}",
+		    		"cell":[
+						"${xChannel.xchannel_id}",
+						"${xChannel.xchannel_name}",
+						"${xChannel.seq}",
+						<#if xChannel.type == "C">
+							"样板工程",
+						</#if>
+						<#if xChannel.type == "N">
+							"新闻",
+						</#if>
+						"<button onclick='javascript:getSubjectOfChannel(${xChannel.xchannel_id}, \"${xChannel.type}\");'>查看</button>"
+		    		]
+				}
+			    <#else>
+			    {
+		    		"id":"${xChannel_index + 1}",
+		    		"cell":[
+						"${xChannel.xchannel_id}",
+						"${xChannel.xchannel_name}",
+						"${xChannel.seq}",
+						<#if xChannel.type == "C">
+							"样板工程",
+						</#if>
+						<#if xChannel.type == "N">
+							"新闻",
+						</#if>
+						"<button onclick='javascript:getSubjectOfChannel(${xChannel.xchannel_id}, \"${xChannel.type}\");'>查看</button>"
+		    		]
+				},
+			    </#if>
+		</#list>
+    ]
+    	 	
+ }
